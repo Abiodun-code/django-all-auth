@@ -13,10 +13,10 @@ class User(AbstractBaseUser, PermissionsMixin):
   is_staff = models.BooleanField(default=False)
   is_admin = models.BooleanField(default=False)
 
-  objects = UserManager()
-
   USERNAME_FIELD = 'email'
-  REQUIRED_FIELDS = ['first_name', 'last_name']
+  # REQUIRED_FIELDS = ['first_name', 'last_name']
+
+  userObject = UserManager()
 
   def __str__(self):
     return self.email
